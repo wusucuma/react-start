@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import TodoListTemplate from './components/TodoListTemplate';
-
+import Form from './components/Form';
+import TodoItemList from './components/TodoItemList'
 function App() {
   return (
-    <TodoListTemplate>
-      템플릿완성
+    <TodoListTemplate form={<Form />}>
+      <TodoItemList />
     </TodoListTemplate>
   );
 }
