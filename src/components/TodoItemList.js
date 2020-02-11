@@ -4,12 +4,25 @@ import TodoItem from './TodoItem'
 const TodoItemList = (props) => {
   const { todos, onToggle, onRemove } = props;
 
+  const createTodoItem = () => {
+    return todos.map(todo => {
+      return (
+        <TodoItem 
+          {...todo}
+          onToggle={onToggle}
+          onRemove={onRemove}
+          key={todo.id}
+        />
+      );
+    });
+  }
+
   return (
     <div>
       <div>
-        <TodoItem text="안녕"/>
-        <TodoItem text="리액트"/>
-        <TodoItem text="반가워"/>        
+        {
+          createTodoItem()
+        }
       </div>
     </div>
   );
